@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:second_flutter_app/widgets/MessageFormWidget.dart';
 import 'package:second_flutter_app/widgets/RollingButtonWidget.dart';
 import 'package:second_flutter_app/widgets/TestButtonWidget.dart';
+import 'package:second_flutter_app/widgets/TestColumnWidget.dart';
 import 'package:second_flutter_app/widgets/TestContainerWidget.dart';
 import 'package:second_flutter_app/widgets/TestImageWidget.dart';
 import 'package:second_flutter_app/widgets/TestRowWidget.dart';
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget{
 //          child: TestButtonWidget(),
 //          child: MessageFormWidget(),
 //          child: TestContainerWidget(),
-          child: TestRowWidget(),
+//          child: TestRowWidget(),
+          child: TestColumnWidget(),
         ),
       ),
     );
