@@ -8,6 +8,7 @@ import 'package:second_flutter_app/widgets/TestColumnWidget.dart';
 import 'package:second_flutter_app/widgets/TestContainerWidget.dart';
 import 'package:second_flutter_app/widgets/TestImageWidget.dart';
 import 'package:second_flutter_app/widgets/TestRowWidget.dart';
+import 'package:second_flutter_app/widgets/TestStackWidget.dart';
 import 'package:second_flutter_app/widgets/TestTextWidget.dart';
 
 void main(){
@@ -28,10 +29,11 @@ class MyApp extends StatelessWidget{
 //          child: TestTextWidget(),
 //          child: TestImageWidget(),
 //          child: TestButtonWidget(),
-          child: MessageFormWidget(),
+//          child: MessageFormWidget(),
 //          child: TestContainerWidget(),
 //          child: TestRowWidget(),
 //          child: TestColumnWidget(),
+          child: TestStackWidget(),
         ),
       ),
     );
