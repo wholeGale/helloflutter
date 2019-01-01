@@ -28,10 +28,10 @@ class MyApp extends StatelessWidget{
 //          child: TestTextWidget(),
 //          child: TestImageWidget(),
 //          child: TestButtonWidget(),
-//          child: MessageFormWidget(),
+          child: MessageFormWidget(),
 //          child: TestContainerWidget(),
 //          child: TestRowWidget(),
-          child: TestColumnWidget(),
+//          child: TestColumnWidget(),
         ),
       ),
     );

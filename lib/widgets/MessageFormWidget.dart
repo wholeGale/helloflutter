@@ -18,6 +18,7 @@ class _MessageFormState extends State<MessageFormWidget>{
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
+        // Expanded:占满一行里除 RaisedButton 外的所有空间
         Expanded(
           //TextField 文本输入框
           child: TextField(
