@@ -1,8 +1,11 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:second_flutter_app/widgets/CallListView.dart';
+import 'package:second_flutter_app/widgets/CallType.dart';
 import 'package:second_flutter_app/widgets/MessageFormWidget.dart';
 import 'package:second_flutter_app/widgets/RollingButtonWidget.dart';
+import 'package:second_flutter_app/widgets/TelephoneCall.dart';
 import 'package:second_flutter_app/widgets/TestButtonWidget.dart';
 import 'package:second_flutter_app/widgets/TestColumnWidget.dart';
 import 'package:second_flutter_app/widgets/TestContainerWidget.dart';
@@ -18,76 +21,38 @@ void main(){
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    final titleSection = TitleSection(
-        'Oeschinen Lake Campground', 'Kandersteg, Switzerland', 41);
-    final buttonSection = Container(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          _buildButtonColumn(context, Icons.call, 'CALL'),
-          _buildButtonColumn(context, Icons.near_me, 'ROUTE'),
-          _buildButtonColumn(context, Icons.share, 'SHARE')
-        ],
-      ),
-    );
-    final textSection = Container(
-      padding: const EdgeInsets.all(32.0),
-      child: Text(
-        '''
-Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. Activities enjoyed here include rowing, and riding the summer toboggan run.
-          ''',
-        softWrap: true,
-      ),
-    );
+    final telephoneCalls = [
+      TelephoneCall(CallType.call,'向彪', '湖北恩施', '2019/01/02'),
+      TelephoneCall(CallType.call_missed,'罗浩', '浙江杭州', '昨天'),
+      TelephoneCall(CallType.call_received,'zhangxiaozong', '江苏苏州', '2019/01/02'),
+      TelephoneCall(CallType.call_received,'汪志勇', '广东深圳', '11:22'),
+      TelephoneCall(CallType.call_missed,'耿凯', '上海', '2019/01/01'),
+      TelephoneCall(CallType.call_received,'童晨曦', '湖北荆州', '2019/01/02'),
+      TelephoneCall(CallType.call_missed,'xuping', '广东广州', '2019/01/03'),
+      TelephoneCall(CallType.call_received,'shaomei', '湖北武汉', '2019/01/01'),
+      TelephoneCall(CallType.call_received,'张三1', '湖北宜昌', '2019/01/02'),
+      TelephoneCall(CallType.call_received,'张三2', '湖北宜昌', '2019/01/02'),
+      TelephoneCall(CallType.call_received,'张三3', '湖北宜昌', '2019/01/02'),
+      TelephoneCall(CallType.call_received,'张三4', '湖北宜昌', '2019/01/02'),
+      TelephoneCall(CallType.call_received,'张三5', '湖北宜昌', '2019/01/02'),
+      TelephoneCall(CallType.call_received,'张三6', '湖北宜昌', '2019/01/02'),
+      TelephoneCall(CallType.call_received,'张三7', '湖北宜昌', '2019/01/02'),
+      TelephoneCall(CallType.call_received,'张三8', '湖北宜昌', '2019/01/02'),
+      TelephoneCall(CallType.call_received,'张三9', '湖北宜昌', '2019/01/02')
+    ];
 
     return MaterialApp(
-      title: 'Flutter UI basic 1',
+      title: 'ListView demo',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Top lakes'),
+          title: Text('最近通话'),
         ),
-        body: ListView(
-          children: <Widget>[
-            Image.asset(
-              'images/girls.jpg',
-              width: 600.0,
-              height: 240.0,
-              //cover类似于Android中的centerCrop，https://docs.flutter.io/flutter/painting/BoxFit-class.html
-              fit: BoxFit.cover,
-            ),
-            titleSection,
-            buttonSection,
-            textSection
-          ],
-        )
+        body: CallListView(telephoneCalls,(index) => debugPrint('item $index clicked')),
       ),
     );
   }
 
 }
 
-Widget _buildButtonColumn(BuildContext context, IconData icon, String label){
-  final color = Theme.of(context).primaryColor;
-
-  return Column(
-    mainAxisSize: MainAxisSize.min,
-    mainAxisAlignment: MainAxisAlignment.center,
-
-    children: <Widget>[
-      Icon(icon,color: color),
-      Container(
-        margin: EdgeInsets.only(top: 8.0),
-        child: Text(
-          label,
-          style: TextStyle(
-              fontSize: 12.0,
-              fontWeight: FontWeight.w400,
-              color: color
-          ),
-        ),
-      )
-    ],
-  );
-}
 
 
