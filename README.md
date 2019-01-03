@@ -1,10 +1,14 @@
 # second_flutter_app
 
-A new Flutter application.
+A new Flutter practice application.
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
+
+##布局效果图 ![Alt text](rendering/layout_rendering.png)
+
+##listview显示最近通话记录的效果图 ![avatar](rendering/listview_rendering.png)
 
 A few resources to get you started if this is your first Flutter project:
 
